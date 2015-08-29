@@ -1,0 +1,46 @@
+<div class="container" style="padding:50px">
+
+		<div class="page-header" style="margin-top:0px;margin-left:5px;margin-right:5px">
+			<div class="alert alert-info"> 
+				<span>My Journey Albums</span>
+				<span><a href="#404_page.html">Go to 404 page</a></span>
+				<span><input type="text" placeholder="Type to search..." data-ng-model="searchAlbum" style="float:right;width:25%"/></span>
+			</div>
+		</div>
+		
+		<div class="album panel panel-primary"  data-ng-repeat="album in albums | filter:{ title:searchAlbum } | orderBy:'title'">
+  				<div class="panel-heading">
+    				<h3 class="panel-title">
+    					<span data-ng-class-even="'even'" data-ng-class-odd="'odd'">{{ album.title }}</span>
+    					<span style="float:right">{{ album.date | date:'mediumDate'}} </span>
+    				</h3>
+  				</div>
+  				<div class="panel-body">
+    				<p>{{ album.desc }}</p>
+    				<img src="{{ album.imgUrl }}" alt="Responsive image" width="100%" height="150px">
+  				</div>
+		</div>
+		
+		<div style="clear:left"></div>
+		
+		<div style="margin-left:20px;margin-right:20px;margin-bottom:20px">
+			<h2><span class="label label-default">Add a New Album</span></h2>
+		</div>
+		
+		<form name="add_album_form" action="" >
+			<div class="album panel panel-default">
+  				<div class="panel-heading">
+    				<div class="panel-title">
+    					<div class="alert alert-danger" role="alert" data-ng-show="validation_error_message">{{ validation_error_message }}</div>
+    					<input name="input_title" type="text" placeholder="Title .. " data-ng-model="newAlbum.title" />
+    					<input name="input_date" type="text" placeholder="YYYY-MM-DD" style="float:right" data-ng-model="newAlbum.date"/>
+    				</div>
+  				</div>
+  				<div class="panel-body">
+  					<textarea name="input_desc" rows="4" placeholder="Description.." data-ng-model="newAlbum.desc" maxlength="20"></textarea><br/>
+  					<input name="input_sname" type="text" placeholder="Album name.." style="width:100%" data-ng-model="newAlbum.name" /><br/>
+  					<button type="button" class="btn btn-success" data-ng-click="addAlbum(newAlbum)">Add New Album</button>
+  				</div>
+		</div>
+		</form>
+	</div>
