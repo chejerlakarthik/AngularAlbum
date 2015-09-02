@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Angular Albums</title>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	
+	<!-- My Angular modules & controller -->
+	<script type="text/javascript" src="js/controllers/app.js"></script>
+	<script type="text/javascript" src="js/controllers/albumsListController.js"></script>
+	<script type="text/javascript" src="js/controllers/my404Controller.js"></script>
+	<script type="text/javascript" src="js/controllers/userController.js"></script>
+	<script type="text/javascript" src="js/controllers/albumViewController.js"></script>
+	
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/app.css"/>
+</head>
+<body data-ng-app="albumApp" class="html-body">
+			
+	<div data-ng-include="'partials/navigation_bar_partial.html'"></div>
+
+	<data-ng-view></data-ng-view>
+	
+</body>
+</html>

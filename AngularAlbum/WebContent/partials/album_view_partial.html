@@ -1,0 +1,8 @@
+<h2>{{ album_name | uppercase }}</h2>
+
+<div class="photo thumbnail" data-ng-repeat="photo in photos">
+	<img src="img/thumb/{{ album_name }}/{{ photo.filename }}" alt="Image" />
+	<div class="caption">
+		<h4>{{ photo.description }}</h4>
+	</div>
+</div>

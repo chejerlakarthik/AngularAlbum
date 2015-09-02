@@ -1,10 +1,10 @@
 album.controller('AlbumsListController', AlbumsListController);
 
 function AlbumsListController($scope){
-	$scope.albums = [{title : 'United Kingdom 2014', date: '2014-01-01', desc: 'London, here I come', albumName: 'London', imgUrl: 'img/london.jpg' },
-					  {title : 'Thailand 2014', date: '2014-06-09', desc: 'Bangkok is a very beautiful place', albumName: 'Thailand', imgUrl: 'img/thailand.jpg'},
-					  {title : 'India 2015', date: '2015-01-01', desc: 'India, better than all places I ve visited', albumName: 'India', imgUrl: 'img/india.jpg' },
-					  {title : 'China 2016', date: '2016-01-01', desc: 'I am visiting China next year. So excited!!', albumName: 'China', imgUrl: 'img/china.jpg' }];
+	$scope.albums = [{name: 'united kingdom', title : 'United Kingdom 2014', date: '2014-01-01', desc: 'London, here I come', albumName: 'London', imgUrl: 'img/london.jpg' },
+					  {name: 'thailand', title : 'Thailand 2014', date: '2014-06-09', desc: 'Bangkok is a very beautiful place', albumName: 'Thailand', imgUrl: 'img/thailand.jpg'},
+					  {name: 'india', title : 'India 2015', date: '2015-01-01', desc: 'India, better than all places I ve visited', albumName: 'India', imgUrl: 'img/india.jpg' },
+					  {name: 'china', title : 'China 2016', date: '2016-01-01', desc: 'I am visiting China next year. So excited!!', albumName: 'China', imgUrl: 'img/china.jpg' }];
 	$scope.newAlbum = {};
 	$scope.validation_error_message = "";
 	$scope.addAlbum = function(newAlbum){
