@@ -1,5 +1,5 @@
 .html-body {
-	padding-top: 20px;
+	padding-top: 2px;
 	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -7,18 +7,18 @@
 }
 
 .navbar-custom {
-	min-height: 80px;
+	min-height: 60px;
 	background-color: burlywood;
 }
 
 .alert-custom {
 	background-color: lightsteelblue;
-	color: teal	
+	color: teal
 }
 
 .label-custom {
 	font-size: x-large;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 }
 
 .navbar-menu-link {
@@ -64,11 +64,39 @@ textarea {
 	margin-bottom: 10px
 }
 
-.photo{
-	float:left;
-	margin-right:5px;
-	width:50%;
-	height:50%;
-	min-height: 200px;
-	display: inline-block;
+.photo {
+	float: left;
+	margin: 1em;
+	width: auto;
+	height: auto;
+}
+
+.photo-centre {
+	width: 50%;
+	height: auto;
+	margin: auto;
+	padding: 10px
+}
+
+.photo>a>img,
+.photo>img {
+	display: block;
+	width: 300px;
+	height: 240px;
+}
+
+.photo .caption-custom {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.photo-centre>a>img,
+.photo-centre>img {
+	display: block;
+	width: 600px;
+	height: 420px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
 }

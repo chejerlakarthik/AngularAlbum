@@ -13,14 +13,16 @@
   				<div class="panel-heading">
     				<h3 class="panel-title">
     					<a href="#/album/{{ album.name }}">
-    						<span ng-class-even="'even'" ng-class-odd="'odd'">{{ album.title }}</span>
+    						<span data-ng-class-even="'even'" data-ng-class-odd="'odd'">{{ album.title }}</span>
     					</a>
     					<span style="float:right">{{ album.date | date:'mediumDate'}} </span>
     				</h3>
   				</div>
   				<div class="panel-body">
     					<p style="margin-bottom: 4px">{{ album.desc }}</p><br/>
-    					<img src="{{ album.imgUrl }}" alt="Responsive image" width="100%" height="150px" >
+    					<a href="#/album/{{ album.name }}">
+    						<img src="{{ album.imgUrl }}" alt="Image Not Found" width="100%" height="150px" >
+    					</a>
   				</div>
 		</div>
 		
@@ -36,14 +38,14 @@
 			<div class="album panel panel-info">
   				<div class="panel-heading">
     				<div class="panel-title">
-    					<div class="alert alert-danger" role="alert" ng-show="validation_error_message">{{ validation_error_message }}</div>
-    					<input name="input_title" type="text" placeholder="Title .. " data-ng-model="newAlbum.title" ng-required="true"/>
+    					<div class="alert alert-danger" role="alert" data-ng-show="validation_error_message">{{ validation_error_message }}</div>
+    					<input name="input_title" type="text" placeholder="Title .. " data-ng-model="newAlbum.title" data-ng-required="true"/>
     					<input name="input_date" type="text" placeholder="YYYY-MM-DD" style="float:right" data-ng-model="newAlbum.date"/>
     				</div>
   				</div>
   				<div class="panel-body">
   					<textarea name="input_desc" rows="4" placeholder="Description.." data-ng-model="newAlbum.desc"></textarea><br/>
-  					<input name="input_sname" type="text" placeholder="Album name.." style="width:100%" data-ng-model="newAlbum.name" ng-required="true"/><br/>
+  					<input name="input_sname" type="text" placeholder="Album name.." style="width:100%" data-ng-model="newAlbum.name" data-ng-required="true"/><br/>
   					<button type="button" class="btn btn-success" data-ng-click="addAlbum(newAlbum)">Add New Album</button>
   				</div>
 			</div>
