@@ -1,4 +1,4 @@
-<div class="container" style="padding:50px">
+<div class="container" style="padding:20px">
 		
 		<!-- Header with dynamic search functionality -->
 		<div class="page-header" style="margin-top:0px;margin-left:5px;margin-right:5px">
@@ -7,6 +7,9 @@
 				<span><input type="text" placeholder="Type to search..." data-ng-model="searchAlbum" style="float:right;width:25%;height: 25px"/></span>
 			</div>
 		</div>
+		<div style="clear:left;"/>
+		<h4 style="text-align:center;">
+		<span class="label label-success"><b>{{ albums.length | pluralise:{sing:'album', plur:'albums'} }}</b></span></h4><br/><br/>
 		
 		<!-- Tiled representation of all albums -->
 		<div class="album panel panel-primary"  data-ng-repeat="album in albums | filter:{ title:searchAlbum } | orderBy:'title'">
@@ -26,7 +29,7 @@
   				</div>
 		</div>
 		
-		<div style="clear:left"></div>
+		<div style="clear:left"/>
 		
 		<!-- Header for the New Album form -->
 		<div style="margin-left:20px;margin-right:20px;margin-bottom:20px">
