@@ -3,9 +3,12 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Angular Albums</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/angular-animate.js"></script>
+  	<script type="text/javascript" src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
 	
 	<!-- My Angular modules & controller -->
 	<script type="text/javascript" src="js/controllers/app.js"></script>
@@ -24,7 +27,8 @@
 			
 	<div data-ng-include="'partials/navigation_bar_partial.html'"></div>
 
-	<data-ng-view></data-ng-view>
-	
+	<div class="view-animate-container">
+  		<ng-view class="view-animate"></ng-view>
+	</div>
 </body>
 </html>

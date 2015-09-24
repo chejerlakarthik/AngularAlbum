@@ -1,15 +1,14 @@
-<div class="container" style="padding:20px">
+<div class="container">
 		
 		<!-- Header with dynamic search functionality -->
 		<div class="page-header" style="margin-top:0px;margin-left:5px;margin-right:5px">
 			<div class="alert-custom alert alert-info"> 
-				<span>My Journey Albums</span>
+				<span style="float:left">My Journey Albums</span>
+				<span class="label label-success" style="position: relative; left: 300px; font-size: small;"><b>{{ albums.length | pluralise:{sing:'album', plur:'albums'} }}</b></span></h4>
 				<span><input type="text" placeholder="Type to search..." data-ng-model="searchAlbum" style="float:right;width:25%;height: 25px"/></span>
 			</div>
 		</div>
 		<div style="clear:left;"/>
-		<h4 style="text-align:center;">
-		<span class="label label-success"><b>{{ albums.length | pluralise:{sing:'album', plur:'albums'} }}</b></span></h4><br/><br/>
 		
 		<!-- Tiled representation of all albums -->
 		<div class="album panel panel-primary"  data-ng-repeat="album in albums | filter:{ title:searchAlbum } | orderBy:'title'">
@@ -24,33 +23,47 @@
   				<div class="panel-body">
     					<p style="margin-bottom: 4px">{{ album.desc }}</p><br/>
     					<a href="#/album/{{ album.name }}">
-    						<img src="{{ album.imgUrl }}" alt="Image Not Found" width="100%" height="150px" >
+    						<img data-ng-src="{{ album.imgUrl }}" alt="Image Not Found" width="100%" height="150px" >
     					</a>
   				</div>
 		</div>
 		
 		<div style="clear:left"/>
 		
-		<!-- Header for the New Album form -->
-		<div style="margin-left:20px;margin-right:20px;margin-bottom:20px">
-			<h2><span class="label label-default">Add a New Album</span></h2>
+		<div>
+			<script type="text/ng-template" id="myModalContent.html">
+			<div class="modal-header">
+	<h4>Create a New Album</h4>
+</div>
+<div class="modal-body">
+	<div class="alert alert-danger" ng-show="add_album_error">{{
+		add_album_error }}</div>
+	<form name="add_album_form" novalidate>
+		<p style="width: 100%">
+		<div style="float: right">
+			<input name="date" type="text" placeholder="yyyy/mm/dd" size="20"
+				ng-model="adding_album.date" />
 		</div>
-		
-		<!-- Form to add a new album  -->
-		<form name="add_album_form" action="" >
-			<div class="album panel panel-info">
-  				<div class="panel-heading">
-    				<div class="panel-title">
-    					<div class="alert alert-danger" role="alert" data-ng-show="validation_error_message">{{ validation_error_message }}</div>
-    					<input name="input_title" type="text" placeholder="Title .. " data-ng-model="newAlbum.title" data-ng-required="true"/>
-    					<input name="input_date" type="text" placeholder="YYYY-MM-DD" style="float:right" data-ng-model="newAlbum.date"/>
-    				</div>
-  				</div>
-  				<div class="panel-body">
-  					<textarea name="input_desc" rows="4" placeholder="Description.." data-ng-model="newAlbum.desc"></textarea><br/>
-  					<input name="input_sname" type="text" placeholder="Album name.." style="width:100%" data-ng-model="newAlbum.name" data-ng-required="true"/><br/>
-  					<button type="button" class="btn btn-success" data-ng-click="addAlbum(newAlbum)">Add New Album</button>
-  				</div>
-			</div>
-		</form>
-	</div>
+		<input type="text" placeholder="Title..." size="30"
+			ng-model="adding_album.title" />
+		</p>
+		<div class="description">
+			<p>
+				<textarea ng-model="adding_album.description"
+					placeholder="Description..." rows="4" style="width: 100%"></textarea>
+			</p>
+			<p>
+				<input type="text" ng-model="adding_album.name" style="width: 100%" />
+			</p>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="ok()">OK</button>
+	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+	</script>
+</div>
+
+<button class="btn btn-success" ng-click="openAddAlbumDialog()">Create New Album</button>
+</div>

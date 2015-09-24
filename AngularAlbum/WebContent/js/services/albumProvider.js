@@ -76,7 +76,7 @@ function albumProvider() {
 		}
 	};
 
-	this.addAlbums = function(newAlbum) {
+	this.addAlbum = function(newAlbum) {
 
 		if (!newAlbum.title) {
 			throw new Error("Title isnt entered!!");
@@ -93,7 +93,7 @@ function albumProvider() {
 			}, {
 				filename : newAlbum.name + '-02.jpg',
 				description : 'Description-2'
-			} ]
+			} ];
 			albums.push(newAlbum);
 			console.log(albums);
 		}

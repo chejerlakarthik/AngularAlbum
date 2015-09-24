@@ -3,7 +3,7 @@
 
 <div class="photo thumbnail" data-ng-repeat="photo in photos">
 	<a href="#/album/{{ album_name }}/{{ photo.filename }}" >
-		<img src="img/thumb/{{ album_name }}/{{ photo.filename }}" alt="Full image" />
+		<img data-ng-src="img/thumb/{{ album_name }}/{{ photo.filename }}" alt="Full image" />
 	</a>
 	<div class="caption-custom caption">
 		<p>{{ photo.description }}</p>

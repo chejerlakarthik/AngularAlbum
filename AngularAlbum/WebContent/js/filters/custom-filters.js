@@ -3,6 +3,7 @@ album.filter('pluralise', function() {
 	return function pluralise(count, noun_rules) {
 		
 		var messageText = 'Displaying ';
+		var messageTextEnd = ' in total';
 		var returnStr = messageText;
 
 		if (!noun_rules.sing || !noun_rules.plur)
@@ -13,10 +14,10 @@ album.filter('pluralise', function() {
 			returnStr = "There are no albums to display";
 			break;
 		case 1:
-			returnStr += count + " " + noun_rules.sing;
+			returnStr += count + " " + noun_rules.sing + messageTextEnd;
 			break;
 		default:
-			returnStr += count + " " + noun_rules.plur;
+			returnStr += count + " " + noun_rules.plur + messageTextEnd;
 		}
 		return returnStr;
 	};
