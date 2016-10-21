@@ -17,6 +17,11 @@
     font-size: 100%;
 }
 
+.label-title {
+    font-size: 120%;
+    font-family: sans-serif;
+}
+
 .navbar-menu-link {
     color: #FFF;
 }
