@@ -1,1 +1,3 @@
-<label data-ng-controller="UserController" style="float:right" class="navbar-text">Hello, <strong>{{ user.name }}</strong></label>
+<label data-ng-controller="UserController" style="float:right" class="navbar-text"><span class="label label-success">Hello, <strong>{{ user.name }}</strong></span>
+    <p><span class="label label-info">{{ time | date:'mediumTime' }}</span> </p>
+</label>
